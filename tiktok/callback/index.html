@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok autorizado</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+<h1>Quase lá</h1>
+<p id="msg">Copie o endereço completo desta página (a barra de endereço lá em cima) e cole no terminal do clipper.</p>
+<p><code id="url"></code></p>
+<p class="muted">Copy the full address of this page and paste it into the clipper terminal.</p>
+</main>
+<script>
+  var url = window.location.href;
+  document.getElementById("url").textContent = url;
+  if (url.indexOf("error=") !== -1) {
+    document.getElementById("msg").textContent = "O TikTok recusou a autorização. Volte ao terminal e tente de novo.";
+  }
+</script>
+</body>
+</html>
